@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <style>
+        .outer-div {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .inner-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            max-width: 800px;
+            padding: 15px;
+            background-color: #FFFFFF;
+        }
+        .upper-inner-div {
+            margin-bottom: 15px;
+            padding: 10px 60px;
+        }
+        .testimonial {
+            font-size: 50px;
+            color: #101612;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .lower-inner-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 5px;
+        }
+        .testp {
+            font-size: 24px;
+            padding: 0px 0px 0px;
+            color: #000000CC;
+            line-height: 2rem;
+        }
+        .name {
+            font-size: 20px;
+            padding: 0px;
+            transform: translateY(-2px);
+        }
+        .desig {
+            color: #8C98A4;
+            font-size: 16px;
+            padding: 0px;
+            transform: translateY(-42px);
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+        #prev, #next {
+            padding: 10px 5px;
+            color: #000000CC;
+            font-size: 32px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+        #prev:hover, #next:hover {
+            transform: scale(1.4);
+            transition: 0.5s;
+        }
+        .imageTopLeft {
+            position: absolute;
+            top: -15%;
+            left: -20%;
+            z-index: 1;
+        }
+        .imageTopRight {
+            width: 304px;
+            height: 304px;
+            position: absolute;
+            top: 25%;
+            right: -40%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-div">
+        <div class="inner-div">
+            <div class="upper-inner-div">
+                <img src="images/shape1.svg" alt="Image" class="imageTopLeft">
+                <h2 class="testimonial">Our clients love us &amp; we love them</h2>
+            </div>
+            <div class="lower-inner-div">
+                <img src="images/shape2.svg" alt="Image" class="imageTopRight">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="images/66.svg" style="width: 75px; height: 53px; padding-bottom: 20px;" alt="Image">
+                        <p class="testp">We've been looking for a solution like this for a long time and ever since partnering with Burq, we've been able to significantly scale our off-premise solutions. We're now enabling delivery for over 60% of our clients!</p>
+                        <h6 class="name">CEO & Co-founder</h6>
+                        <p class="desig">Online Ordering Platform</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/66.svg" style="width: 75px; height: 53px; padding-bottom: 20px;" alt="Image">
+                        <p class="testp">We desperately needed to offer delivery to our clients, and Burq made this daunting task really simple. In a matter of a few weeks, we were live with an all-encompassing delivery solution.</p>
+                        <h6 class="name">COO</h6>
+                        <p class="desig">Restaurant Solutions Company</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/66.svg" style="width: 75px; height: 53px; padding-bottom: 20px;" alt="Image">
+                        <p class="testp">From top to bottom, working with the Burq team has been a great experience. We had a nearly seamless integration process and they've been very professional supporting us ever since.</p>
+                        <h6 class="name">CTO & Co-Founder</h6>
+                        <p class="desig">Online Grocery Platform</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/66.svg" style="width: 75px; height: 53px; padding-bottom: 20px;" alt="Image">
+                        <p class="testp">Looking back, integrating Burq saved us months of work of integrating and dealing with additional delivery companies along the way.</p>
+                        <h6 class="name">CEO & Co-founder</h6>
+                        <p class="desig">Luxury Goods Marketplace</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/66.svg" style="width: 75px; height: 53px; padding-bottom: 20px;" alt="Image">
+                        <p class="testp">Our customers have had far fewer issues with deliveries since we switched over to Burq and we've spent less time dealing with daily delivery problems. As a company highly invested in our users' experience, we've found a great fit with Burq.</p>
+                        <h6 class="name">Head of Operations</h6>
+                        <p class="desig">National Food Corporation</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="prev">&larr;</button>
+                    <button id="next">&rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
+    });
+</script>
+</html>

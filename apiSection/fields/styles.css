@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F3F8FF;
+}
+
+.container {
+    width: 1450px;
+    height: 636px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    background: #F3F8FF;
+    border-radius: 10px;
+}
+
+.tab-heading {
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0px 40px;
+    background-color: #F3F8FF;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    flex: 1;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F3F8FF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.tab.inactive {
+    background-color: #F3F8FF;
+}
+
+.tab.active {
+    background-color: #ffffff;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+}
+
+.icon.active {
+    opacity: 1;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tabcontent {
+    width: 1300px;
+    height: 460px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out;
+}
+
+.tabcontent.active {
+    display: flex;
+    transform: translateY(0);
+}
+
+.tabdetails {
+    flex-basis: 50%;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.tabdetails h3 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.tabdetails p {
+    margin: 0;
+    font-size: 20px;
+    color: #8C98A4;
+}
+
+.show {
+    transform: translateY(0);
+}

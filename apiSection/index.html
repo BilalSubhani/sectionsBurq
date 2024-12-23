@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs with Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 1300px;
+            height:auto;
+            background: #F6F9FC;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            padding: 40px;
+            margin: 60px;
+            text-align: center;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #F6F9FC;
+            gap: 250px;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #F6F9FC;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 40px 100px;
+            text-align: center;
+            color: #C5C7CA;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding-bottom: 0px;
+        }
+
+        .tab.active {
+            color: black;
+            border-bottom: 2px solid black;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .icon{
+            opacity: 0.2;
+        }
+        .icon.active{
+            opacity: 1;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: 55vh;
+            display: none;
+            margin: 0 auto;
+        }
+
+        .content img.active {
+            display: block;
+        }
+        .roundImg {
+            position: absolute;
+            width: 118px;
+            height: 118px;
+            right: 3%;
+            top: 3%;
+            background-color: #75F1D5;
+            border-radius: 50%;
+            transform: translateY(0);
+            z-index: 1000;;
+        }
+        .imageL {
+            position: absolute;
+            left: 3%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            border-radius: 50%;
+            top: 205px;
+        }
+        .imageL, .roundImg {
+            animation: moveUpDown 5s infinite;
+            animation-delay: 1s;
+        }
+        .imageR {
+            position: absolute;
+            right: 3%;
+            top: 70%;
+            transform: translateY(50%);
+            z-index: 1000;
+            border-radius: 50%;
+        }
+        .imageR {
+            animation: moveUpDownReverse 5s infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes moveUpDownReverse {
+            0%, 100% {
+            transform: translateY(-80%);
+            }
+            50% {
+            transform: translateY(-70%);
+            }
+        }
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(-10%);
+            }
+            50% {
+                transform: translateY(-30%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/left-img.svg" alt="Left Image" class="imageL">
+        <img src="images/right-img.svg" alt="Left Image" class="imageR">
+        <div class="roundImg"></div>
+
+        <div class="tab-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="1"><img src="images/api-icon.svg" class="icon active" data-tab="1"> API</div>
+                <div class="tab" data-tab="2"><img src="images/dashboard-icon.svg"  class="icon" data-tab="2"> Dashboard</div>
+                <div class="tab" data-tab="3"><img src="images/track-icon.svg"  class="icon" data-tab="3"> Track</div>
+            </div>
+        </div>
+        <div class="content">
+            <img src="images/api.webp" alt="Image 1" data-tab="1" class="active">
+            <img src="images/dashboard.png" alt="Image 2" data-tab="2">
+            <img src="images/track.png" alt="Image 3" data-tab="3">
+        </div>
+    </div>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const images = document.querySelectorAll('.content img');
+        const icons = document.querySelectorAll('.icon');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                images.forEach(img => img.classList.remove('active'));
+                icons.forEach(icon => icon.classList.remove('active'));
+
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                // console.log(tabId);
+                document.querySelector(`.content img[data-tab="${tabId}"]`).classList.add('active');
+                document.querySelector(`.icon[data-tab="${tabId}"]`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Section</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            margin: 150px 0;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content-container {
+            height: 500px;
+            background-color: #ffffff;
+            padding: 50px;
+        }
+
+        .left-div {
+            flex: 3 1 0;
+            padding: 10px 0px 0px 200px;
+            transform: translateX(-100px);
+            transition: 1s;
+            opacity: 0;
+        }
+
+        .left-div.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .left-div h6 {
+            font-size: 16px;
+            font-weight: lighter;
+            color: #999999;
+            transform: translateY(40px);
+        }
+
+        .left-div h3 {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1;
+            transform: translateY(30px);
+        }
+
+        .left-div p {
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 300;
+            color: #8C98A4;
+            transform: translateY(-50px);
+        }
+
+        .left-div img {
+            width: 500px;
+            height: 100px;
+            transform: translateY(-30px);
+        }
+
+        .left-div button {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px;
+            background-color: #0066FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            transform: translateY(-20px);
+        }
+
+        .left-div button:hover {
+            background-color: #004FCC;
+        }
+
+        .right-div {
+            flex: 7 1 0;
+            position: relative;
+            transform: translateX(100px);
+            transition: 1s;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 440px;
+            height: 450px;
+            margin: 40px 120px 0px 200px;
+            background-color: #FAF7F0;
+            border-radius: 12px;
+        }
+
+        .right-div.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .border-div {
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        .right-div .left-1 {
+            top: 85%;
+            left: -45px;
+        }
+
+        .right-div .left-2 {
+            top: 60px;
+            left: -35px;
+        }
+
+        .right-div .top-1 {
+            top: 25px;
+            left: 60%;
+            transform: translateX(-50%);
+        }
+
+        .right-div .right-1 {
+            top: 45px;
+            right: -45px;
+        }
+
+        .right-div .right-2 {
+            bottom: 130px;
+            right: -45px;
+        }
+
+        .right-div .bottom-1 {
+            bottom: -50px;
+            left: 55%;
+        }
+
+        .border-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .round-div {
+            width: 153px;
+            height: 153px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .round-div img {
+            object-fit: cover;
+        }
+
+        .right-div .left-1, .right-div .top-1 {
+            animation: moveUpDownReverse 5s infinite;
+            animation-delay: 1s;
+        }
+        .right-div .right-1, .right-div .bottom-1, .right-div .left-2 {
+            animation: moveUpDown 5s infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes moveUpDownReverse {
+            0%, 100% {
+            transform: translateY(-80%);
+            }
+            50% {
+            transform: translateY(-70%);
+            }
+        }
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(-10%);
+            }
+            50% {
+                transform: translateY(-20%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="flex-container" id="observe-container">
+            <div class="left-div">
+                <h6>QUICK INTEGRATION</h6>
+                <h3>Easily integrate with your existing technology</h3>
+                <img src="images/lines.svg" alt="Image">
+                <p>Whether your business uses an ecommerce platform or a custom technology, our quick and simple integration process can be completed in under an hour.</p>
+                <button class="cta-hero">Let's Get Started</button>
+            </div>
+            <div class="right-div">
+
+                <div class="border-div left-1"  style="width:81px; height: 81px;">
+                    <img src="images/zapier.png" class="border-image" style="width:60px; height: 60px;" alt="Image 1">
+                </div>
+                <div class="border-div left-2"  style="width:105px; height: 105px;">
+                    <img src="images/woo.png" class="border-image"  style="width:60px; height: 36px;"alt="Image 2">
+                </div>
+                <div class="border-div top-1"  style="width:60px; height: 60px;">
+                    <img src="images/clover.png" class="border-image"  style="width:30px; height: 30px;"alt="Image 3">
+                </div>
+                <div class="border-div right-1"  style="width:105px; height: 105px;">
+                    <img src="images/ebay.png" class="border-image" alt="Image 4">
+                </div>
+                <div class="border-div right-2" style="width:100px; height: 100px;">
+                    <img src="images/package.svg" class="border-image" style="width:100px; height: 100px;" alt="Image 5">
+                </div>
+                <div class="border-div bottom-1" style="width:148px; height: 148px;">
+                    <img src="images/shopify.png" class="border-image" style="width: 80px; height: 91px;"alt="Image 6">
+                </div>
+
+                <div class="round-div">
+                    <img src="images/b.svg" alt="Round Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.left-div').classList.add('show');
+                    entry.target.querySelector('.right-div').classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const container = document.getElementById('observe-container');
+        observer.observe(container);
+    </script>
+</body>
+</html>

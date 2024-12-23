@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs Fix</title>
+    <style>
+        .main-container {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #F3F8FF;
+        }
+
+        .container {
+            width: 1450px;
+            height: 636;
+            margin: 0 auto;
+            padding: 0px 15px;
+            background: #F3F8FF;
+            border-radius: 10px;
+        }
+
+        .tab-heading {
+            font-size: 36px;
+            font-weight: 100;
+            text-align: center;
+            margin-bottom: 20px;
+            transform: translateY(100px);
+            transition: transform 1s, opacity 1s;
+            opacity: 0;
+        }
+
+        .tab-heading.show{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin: 60px 0px 40px;
+            background-color: #F3F8FF;
+            transform: translateY(100px);
+            transition: transform 1s, opacity 1s;
+            opacity: 0;
+        }
+
+        .tab-container.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 30px;
+        }
+
+        .tab {
+            flex: 1;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F3F8FF;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 20px;
+        }
+
+        .tab.inactive {
+            background-color: #F3F8FF;
+        }
+
+        .tab.active {
+            background-color: #ffffff;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            transition: opacity 0.3s;
+        }
+
+        .icon.active {
+            opacity: 1;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform: translateY(100px);
+            transition: transform 1s, opacity 1s;
+            opacity: 0;
+        }
+
+        .content.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .tabcontent {
+            width: 1300px;
+            height: 460px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            background: #ffffff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+
+        .tabcontent.active {
+            display: flex;
+        }
+
+        .tabcontent img {
+            flex-basis: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .tabdetails {
+            flex-basis: 50%;
+            padding: 40px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .tabdetails h3 {
+            margin-bottom: 20px;
+            font-size:36px;
+        }
+
+        .tabdetails p {
+            margin: 0;
+            font-size: 20px;
+            color: #8C98A4
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h3 class="tab-heading">We work with all industries</h3>
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab active" data-tab="1"><img src="tabIcons/ecommerce-blue.svg" class="icon active" data-tab="1"></div>
+                    <div class="tab inactive" data-tab="2"><img src="tabIcons/food.svg" class="icon inactive" data-tab="2"></div>
+                    <div class="tab inactive" data-tab="3"><img src="tabIcons/flower-shop.svg" class="icon inactive" data-tab="3"></div>
+                    <div class="tab inactive" data-tab="4"><img src="tabIcons/pharmacy.svg" class="icon inactive" data-tab="4"></div>
+                    <div class="tab inactive" data-tab="5"><img src="tabIcons/construction.svg" class="icon inactive" data-tab="5"></div>
+                    <div class="tab inactive" data-tab="6"><img src="tabIcons/grocery.svg" class="icon inactive" data-tab="6"></div>
+                    <div class="tab inactive" data-tab="7"><img src="tabIcons/retailer.svg" class="icon inactive" data-tab="7"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="tabcontent active" data-tab="1">
+                    <img src="tabImages/ecom-delivery.webp" alt="E-commerce">
+                    <div class="tabdetails">
+                        <h3>E-commerce</h3>
+                        <p>Deliver your products to your customers with our delivery management system.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="2">
+                    <img src="tabImages/catering.webp" alt="Food">
+                    <div class="tabdetails">
+                        <h3>Food</h3>
+                        <p>Streamline your catering and delivery services effectively.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="3">
+                    <img src="tabImages/flower-shop.webp" alt="Flower Shop">
+                    <div class="tabdetails">
+                        <h3>Flower Shop</h3>
+                        <p>Manage your floral deliveries with precision and care.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="4">
+                    <img src="tabImages/pharmacy.webp" alt="Pharmacy">
+                    <div class="tabdetails">
+                        <h3>Pharmacy</h3>
+                        <p>Deliver medications to your customers efficiently and safely.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="5">
+                    <img src="tabImages/tools.webp" alt="Construction">
+                    <div class="tabdetails">
+                        <h3>Construction</h3>
+                        <p>Optimize your tools and equipment delivery process.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="6">
+                    <img src="tabImages/grocery.webp" alt="Grocery">
+                    <div class="tabdetails">
+                        <h3>Grocery</h3>
+                        <p>Ensure timely delivery of groceries to your customers.</p>
+                    </div>
+                </div>
+                <div class="tabcontent inactive" data-tab="7">
+                    <img src="tabImages/retailer.webp" alt="Retailer">
+                    <div class="tabdetails">
+                        <h3>Retailer</h3>
+                        <p>Manage your retail deliveries with ease and efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const icons = document.querySelectorAll('.icon');
+        const tabContents = document.querySelectorAll('.tabcontent');
+        const tabImages = {
+            1: {
+                active: 'tabIcons/ecommerce-blue.svg',
+                inactive: 'tabIcons/ecommerce.svg'
+            },
+            2: {
+                active: 'tabIcons/food-blue.svg',
+                inactive: 'tabIcons/food.svg'
+            },
+            3: {
+                active: 'tabIcons/flower-shop-blue.svg',
+                inactive: 'tabIcons/flower-shop.svg'
+            },
+            4: {
+                active: 'tabIcons/pharmacy-blue.svg',
+                inactive: 'tabIcons/pharmacy.svg'
+            },
+            5: {
+                active: 'tabIcons/construction-blue.svg',
+                inactive: 'tabIcons/construction.svg'
+            },
+            6: {
+                active: 'tabIcons/grocery-blue.svg',
+                inactive: 'tabIcons/grocery.svg'
+            },
+            7: {
+                active: 'tabIcons/retailer-blue.svg',
+                inactive: 'tabIcons/retailer.svg'
+            }
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                icons.forEach(icon => icon.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                tabs.forEach(t => t.classList.add('inactive'));
+                icons.forEach(icon => icon.classList.add('inactive'));
+                tabContents.forEach(content => content.classList.add('inactive'));
+
+                const tabId = tab.getAttribute('data-tab');
+                tab.classList.add('active');
+                document.querySelector(`.tabcontent[data-tab="${tabId}"]`).classList.add('active');
+                document.querySelector(`.icon[data-tab="${tabId}"]`).classList.add('active');
+
+                const activeIcon = document.querySelector(`.icon[data-tab="${tabId}"]`);
+                activeIcon.src = tabImages[tabId].active;
+
+                tabs.forEach(t => {
+                    if (!t.classList.contains('active')) {
+                        const inactiveIcon = document.querySelector(`.icon[data-tab="${t.getAttribute('data-tab')}"]`);
+                        inactiveIcon.src = tabImages[t.getAttribute('data-tab')].inactive;
+                    }
+                });
+            });
+        });
+
+
+        const container = document.querySelector(".container");
+        const heading = document.querySelector(".tab-heading");
+        const tabContainer = document.querySelector(".tab-container");
+        const tabContent = document.querySelector(".content");
+
+        const observerHeading = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                heading.classList.toggle('show', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        const observerTabContainer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                tabContainer.classList.toggle('show', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        const observerTabContent = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                tabContent.classList.toggle('show', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0.5
+        });
+
+
+        observerHeading.observe(container);
+        observerTabContainer.observe(container);
+        observerTabContent.observe(container);
+    </script>
+</body>
+</html>
