@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who's Backing Us</title>
+  <style>
+    .backing-div {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .client-feedback-slider-one {
+      padding: 250px 20px 250px 140px;
+      margin-left: -75px;
+      background-color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shapes-holder {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 5%;
+      width: 600px;
+      height: auto;
+    }
+
+    .shapes-holder img {
+      position: absolute;
+    }
+
+    .shapes-holder .bg-shape {
+      width: 600px;
+      height: auto;
+      transform: translateY(120px);
+      z-index: 0;
+    }
+
+    .shapes-holder .topleft {
+      top: 70px;
+      left: 280px;
+      width: 179px;
+      height: 179px;
+      z-index: 1;
+    }
+
+    .shapes-holder .leftop {
+      top: 220px;
+      left: 150px;
+      width: 60px;
+      height: 60px;
+      z-index: 1;
+    }
+
+    .shapes-holder .leftbottom {
+      bottom: -500px;
+      left: 70px;
+      width: 75px;
+      height: 75px;
+      z-index: 1;
+    }
+
+    .shapes-holder .bottomright {
+      bottom: -620px;
+      right: 140px;
+      width: 80px;
+      height: 80px;
+      z-index: 1;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      background-color: transparent;
+      position: relative;
+    }
+
+    .heading-section {
+      flex: 1;
+      margin-left: 50px;
+      margin-right: 250px;
+      z-index: 1;
+    }
+
+    .heading-section h2 {
+      font-size: 58px;
+      color: #101621;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .investors {
+      color: #8C98A4;
+      font-size: 120px;
+      font-weight: 600;
+      z-index: 1;
+      position: absolute;
+      top: -170px;
+      right: -100px;
+      opacity: 0.2;
+    }
+
+    .text-section {
+      flex: 2;
+      color: #8c98a4;
+    }
+
+    .text-section p {
+      line-height: 1.8;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .text-section a {
+      color: #8c98a4;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .text-section a:hover {
+      color: #007bff;
+    }
+
+    .fancy-short-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px;
+      margin: 100px 20px;
+    }
+
+    .fancy-short-banner .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: space-between;
+      background-image: url('images/BgBanner.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      padding: 70px 60px;
+      position: relative;
+    }
+
+    .fancy-short-banner .title {
+      flex: 1 1 50%;
+      max-width: 600px;
+      z-index: 2;
+    }
+
+    .fancy-short-banner h2 {
+      font-size: 48px;
+      color: #101621;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .fancy-short-banner .cta {
+      flex: 1 1 50%;
+      padding-top: 130px;
+      transform: translateX(100px);
+    }
+
+    .fancy-short-banner .cta a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .fancy-short-banner .cta a:hover {
+      background-color: #0056b3;
+    }
+
+    .fancy-image-topright {
+      position: absolute;
+      top: -125px;
+      right: 15px;
+      z-index: -1;
+      width: 150px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="backing-div">
+    <div class="client-feedback-slider-one">
+      <div class="shapes-holder">
+        <img src="images/BgShape.svg" class="bg-shape" alt="BG Shape">
+        <img src="images/TL1.svg" class="topleft" alt="">
+        <img src="images/LT1.webp" class="leftop" alt="">
+        <img src="images/LB1.webp" class="leftbottom" alt="">
+        <img src="images/BR1.webp" class="bottomright" alt="">
+      </div>
+      <div class="container">
+        <div class="heading-section">
+          <h2>Who's Backing Us?</h2>
+        </div>
+        <div class="text-section">
+          <p>
+            Burq is backed by 
+            <a href="https://onewayvc.com/">One Way Ventures</a> and 
+            <a href="https://www.villageglobal.vc/">Village Global</a>, 
+            the fund whose investors include Bill Gates, Jeff Bezos, Mark Zuckerberg, Reid Hoffman, and Sara Blakely. 
+            We're also a proud member of the 
+            <a href="https://innovationlabs.harvard.edu/">Harvard Innovation Labs</a>.
+          </p>
+        </div>
+        <div class="investors">INVESTORS</div>
+      </div>
+    </div>
+  
+    <div class="fancy-short-banner">
+      <div class="container">
+        <div class="title">
+          <h2>Start powering your deliveries with Burq today!</h2>
+        </div>
+        <div class="cta">
+          <a href="https://burqup.com/get-started/">Let's Get Started</a>
+        </div>
+        <div class="fancy-image-topright">
+          <img src="images/redCircles.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
